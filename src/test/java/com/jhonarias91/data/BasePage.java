@@ -16,4 +16,5 @@ public class BasePage {
     public void setPage(Page page) {
         this.page = page;
     }
+
 }
