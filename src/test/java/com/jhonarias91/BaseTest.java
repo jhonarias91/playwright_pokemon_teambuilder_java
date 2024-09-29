@@ -19,7 +19,7 @@ public class BaseTest {
 
     public static final String SRC_TEST_RESOURCES_POKEMON_DATA_DRIVEN_JSON =
             "src/test/resources/pokemon_data_driven.json";
-    private static final boolean IS_HEADLESS = false;
+    private static final boolean IS_HEADLESS = true;
 
     protected Playwright playwright;
     protected Browser browser;

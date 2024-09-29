@@ -36,7 +36,7 @@ public class PokemonTeamBuilderTest extends BaseTest {
         //Star creating a team
         teamBuilderPage.goToCreateTeam();
         //Choose the format and generation
-        teamBuilderPage.chooseAFormat(data.getGen(), data.getFormat());
+        teamBuilderPage.enterGenAndFormat(data.getGen(), data.getFormat());
 
         for (Pokemon currentPokemon : data.getTeam()) {
             teamBuilderPage.goToAddNewPokemon();
