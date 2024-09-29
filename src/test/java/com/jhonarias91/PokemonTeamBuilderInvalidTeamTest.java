@@ -69,9 +69,4 @@ public class PokemonTeamBuilderInvalidTeamTest extends BaseTest {
 
     }
 
-    @AfterAll
-    public void afterAll() {
-        this.playwright.close();
-    }
-
 }

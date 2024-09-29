@@ -68,9 +68,4 @@ public class PokemonTeamBuilderTest extends BaseTest {
 
     }
 
-    @AfterAll
-    public void afterAll() {
-        this.playwright.close();
-    }
-
 }
