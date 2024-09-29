@@ -16,9 +16,6 @@ import java.io.IOException;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class BaseTest {
-
-    public static final String SRC_TEST_RESOURCES_POKEMON_DATA_DRIVEN_JSON =
-            "src/test/resources/pokemon_data_driven.json";
     private static final boolean IS_HEADLESS = true;
 
     protected Playwright playwright;
@@ -36,14 +33,13 @@ public class BaseTest {
                         .setHeadless(IS_HEADLESS)
                         .setSlowMo(1));
         this.page = browser.newPage();
-        readData();
     }
 
-    private void readData() throws IOException {
+    protected void readData(String dataPath) throws IOException {
 
         Gson gson = new Gson();
         try {
-            JsonReader reader = new JsonReader(new FileReader(SRC_TEST_RESOURCES_POKEMON_DATA_DRIVEN_JSON));
+            JsonReader reader = new JsonReader(new FileReader(dataPath));
             this.data = gson.fromJson(reader, PokemonTeam.class);
 
         } catch (FileNotFoundException e) {

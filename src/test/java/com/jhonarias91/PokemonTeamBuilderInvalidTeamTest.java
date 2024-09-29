@@ -7,10 +7,10 @@ import org.junit.jupiter.api.*;
 import java.io.IOException;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public class PokemonTeamBuilderTest extends BaseTest {
+public class PokemonTeamBuilderInvalidTeamTest extends BaseTest {
 
     public static final String TEST_DATA_POKEMON_DATA_DRIVEN_JSON_PATH =
-            "src/test/resources/pokemon_data_driven.json";
+            "src/test/resources/pokemon_invalid_team_data.json";
 
     private MainPage mainPage;
     private TeamBuilderPage teamBuilderPage;
@@ -63,8 +63,9 @@ public class PokemonTeamBuilderTest extends BaseTest {
         }
 
         teamBuilderPage.validateTeam();
-        Assertions.assertEquals(String.format("Your team is valid for [%s] %s.",
-                data.getGen(), data.getFormat()), teamBuilderPage.getPopUpText());
+        Assertions.assertEquals("Your team was rejected for the following reasons:\n" +
+                        "\n" +
+                        "- Darkrai can't learn Stone Edge.", teamBuilderPage.getPopUpText());
 
     }
 
