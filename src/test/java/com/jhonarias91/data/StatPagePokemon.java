@@ -9,7 +9,7 @@ import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
-public class StatPage extends BasePage {
+public class StatPagePokemon extends BasePagePokemon {
 
     public static final String STAT_INPUT_CSS_SELECTOR = "input[name='%s']";
     public static final String STAT_EM_CSS_SELECTOR = ".totalev em";
@@ -25,7 +25,7 @@ public class StatPage extends BasePage {
      * @inParam page: page to search the elements
      * @inParam statInputNames: the names key and their real values
      * */
-    public StatPage(Page page, Map<String, String> statInputNames) {
+    public StatPagePokemon(Page page, Map<String, String> statInputNames) {
         super(page);
         evs = new HashMap<>();
         for (String key : statInputNames.keySet()) {

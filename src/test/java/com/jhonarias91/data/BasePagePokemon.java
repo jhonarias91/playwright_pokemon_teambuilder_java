@@ -2,11 +2,11 @@ package com.jhonarias91.data;
 
 import com.microsoft.playwright.Page;
 
-public class BasePage {
+public class BasePagePokemon {
 
     protected Page page;
 
-    public BasePage(Page page){
+    public BasePagePokemon(Page page){
         this.page = page;
     }
     public Page getPage() {
@@ -16,4 +16,5 @@ public class BasePage {
     public void setPage(Page page) {
         this.page = page;
     }
+
 }

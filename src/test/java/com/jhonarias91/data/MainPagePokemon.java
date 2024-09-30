@@ -3,13 +3,13 @@ package com.jhonarias91.data;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 
-public class MainPage extends BasePage {
+public class MainPagePokemon extends BasePagePokemon {
 
     private static final String TEAM_BUILDER_CSS_LOCATOR = "button[value='teambuilder']";
 
     private Locator teamBuilderBtn;
 
-    public MainPage(Page page) {
+    public MainPagePokemon(Page page) {
         super(page);
         this.teamBuilderBtn = page.locator(TEAM_BUILDER_CSS_LOCATOR);
     }

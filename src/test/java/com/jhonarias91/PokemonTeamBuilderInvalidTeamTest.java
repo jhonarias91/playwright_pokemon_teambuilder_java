@@ -12,23 +12,23 @@ public class PokemonTeamBuilderInvalidTeamTest extends BaseTest {
     public static final String TEST_DATA_POKEMON_DATA_DRIVEN_JSON_PATH =
             "src/test/resources/pokemon_invalid_team_data.json";
 
-    private MainPage mainPage;
-    private TeamBuilderPage teamBuilderPage;
-    private MovePage movePage;
-    private StatPage statPage;
-    private PokemonSearchPage pokemonSearchPage;
+    private MainPagePokemon mainPage;
+    private TeamBuilderPagePokemon teamBuilderPage;
+    private MovePagePokemon movePage;
+    private StatPagePokemon statPage;
+    private PokemonSearchPagePokemon pokemonSearchPage;
 
     @BeforeAll
     public void beforeAll() throws IOException {
         super.beforeAll();
         super.readData(TEST_DATA_POKEMON_DATA_DRIVEN_JSON_PATH);
-        this.mainPage = new MainPage(super.page);
+        this.mainPage = new MainPagePokemon(super.page);
         String genFormatkey = data.getGen().trim() + super.data.getFormat();
         genFormatkey = genFormatkey.toLowerCase().replace(" ", "");
-        this.teamBuilderPage = new TeamBuilderPage(super.page, genFormatkey);
-        this.movePage = new MovePage(page, data.getMoveInputNames());
-        this.statPage = new StatPage(page, data.getStatInputNames());
-        this.pokemonSearchPage = new PokemonSearchPage(page);
+        this.teamBuilderPage = new TeamBuilderPagePokemon(super.page, genFormatkey);
+        this.movePage = new MovePagePokemon(page, data.getMoveInputNames());
+        this.statPage = new StatPagePokemon(page, data.getStatInputNames());
+        this.pokemonSearchPage = new PokemonSearchPagePokemon(page);
     }
 
     @Test
