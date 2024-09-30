@@ -5,7 +5,7 @@ import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.AriaRole;
 import com.microsoft.playwright.options.WaitForSelectorState;
 
-public class TeamBuilderPage extends BasePage{
+public class TeamBuilderPagePokemon extends BasePagePokemon {
 
     public static final String TB_BTN_NEW_TEAM_XPATH_SELECTOR = "//button[@value='team' and @name='newTop']";
     public static final String TB_INPUT_FORMAT_CSS_SELECTOR = "input[placeholder='Search formats']";
@@ -29,7 +29,7 @@ public class TeamBuilderPage extends BasePage{
     private final Locator.PressSequentiallyOptions DEFAULT_SEQUENTIAL_DELAY
              = new Locator.PressSequentiallyOptions().setDelay(1);
 
-    public TeamBuilderPage(Page page, String genFormatkey) {
+    public TeamBuilderPagePokemon(Page page, String genFormatkey) {
         super(page);
         this.btnNewTeam = page.locator(TB_BTN_NEW_TEAM_XPATH_SELECTOR);
         this.inputSelectFormat = page.locator(TB_INPUT_FORMAT_CSS_SELECTOR);

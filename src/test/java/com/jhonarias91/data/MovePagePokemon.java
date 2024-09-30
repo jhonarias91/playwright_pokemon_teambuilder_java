@@ -6,7 +6,7 @@ import com.microsoft.playwright.Page;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MovePage extends BasePage {
+public class MovePagePokemon extends BasePagePokemon {
 
     public static final String MOVE_INPUT_MOVE_CSS_SELECTOR = "input[name='%s']";
     public static final String MOVE_HEADER_STATS_XPATH_SELECTOR = "//button[@name='stats']/span[@class='statrow']/label[contains(text(), 'HP')]";
@@ -25,7 +25,7 @@ public class MovePage extends BasePage {
      *@inParam page: page to search the elements
      * @inParam moveInputFieldsNames: the names for the movements text inputs
      * */
-    public MovePage(Page page, List<String> moveInputFieldsNames) {
+    public MovePagePokemon(Page page, List<String> moveInputFieldsNames) {
         super(page);
         moves = new ArrayList<>(moveInputFieldsNames.size());
         for (int i = 0; i < moveInputFieldsNames.size(); i++) {
